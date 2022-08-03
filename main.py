@@ -24,4 +24,4 @@ async def on_message(message):
         await message.channel.send(textgen.generate(return_as_list=True)[0])
 
 
-client.run("Token here
+client.run("Token here")
