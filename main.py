@@ -1,3 +1,4 @@
+#!/bin/python
 import discord
 from textgenrnn import textgenrnn
 

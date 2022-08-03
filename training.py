@@ -1,3 +1,4 @@
+#!/bin/python
 from textgenrnn import textgenrnn
 
 textgen = textgenrnn("textgenrnn_weights.hdf5")
