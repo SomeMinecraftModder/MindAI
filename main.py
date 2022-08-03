@@ -2,8 +2,7 @@
 import discord
 from textgenrnn import textgenrnn
 
-textgen = textgenrnn()
-client = discord.Client()
+textgen = textgenrnn("model.hdf5")
 
 bot = discord.Bot(debug_guild=826685556431912961)
 
@@ -14,11 +13,13 @@ async def on_ready():
     print('We have logged in as {0.user}'.format(client))
 """
 
-@bot.slash_command(name="message")
+@bot.slash_command(name="msg")
 async def on_message(ctx, message: str):
-	f = open("message.txt", mode="a", encoding="utf-8")
-	f.write(message + "\n")
-	f.close()
+	await ctx.defer()
+	with open("message.txt", mode="a", encoding="utf-8") as f:
+		for i in message.split("\n"):
+			f.write(i + '\n')
+	await ctx.followup.send("recorded")
 
 @bot.slash_command(name="gen")
 async def gen(ctx):
@@ -27,4 +28,4 @@ async def gen(ctx):
 	await ctx.followup.send(textgen.generate(return_as_list=True)[0])
 
 
-client.run("replace me")
+bot.run("insert here")
