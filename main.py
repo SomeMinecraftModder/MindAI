@@ -27,4 +27,4 @@ async def gen(ctx):
 	await ctx.followup.send(textgen.generate(return_as_list=True)[0])
 
 
-client.run("ODQzMjE1MzI4MzU5MzUwMzIy.GWRaPM.cM9I6dsBkZSZMT5duZAlyzyi23uUHDz_HTEMxI")
+client.run("replace me")
